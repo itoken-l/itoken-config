@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/itoken-l/itoken-config.git
+          search-paths: respo
+          username: lkp7321
+          password: lkp997321.O
+      uri: http://localhost:8888
+      name: itoken-config
+      profile: prod
