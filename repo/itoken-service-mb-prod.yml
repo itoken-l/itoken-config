@@ -7,6 +7,20 @@ spring:
     admin:
       client:
         url: http://localhost:8084
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/stytest?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT
+      username: root
+      password: root@7321
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  type-aliases-package: com.cloud.service.mb.pojo
+  mapper-locations: classpath:mapper/*.xml
 
 server:
   port: 8766
