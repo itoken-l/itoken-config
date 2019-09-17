@@ -37,6 +37,10 @@ mybatis:
 server:
   port: 8766
 
+feign:
+  hystrix:
+    enabled: true
+
 eureka:
   client:
     service-url:
