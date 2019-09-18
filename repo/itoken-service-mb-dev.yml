@@ -40,12 +40,6 @@ server:
 feign:
   hystrix:
     enabled: true
-    command:
-      default:
-        execution:
-          isolation:
-            thread:
-              timeoutInMilliseconds: 5000
 
 eureka:
   client:
