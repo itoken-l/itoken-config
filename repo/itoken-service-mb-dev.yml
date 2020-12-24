@@ -37,7 +37,7 @@ spring:
     masterslave:
       load-balance-algorithm-type: round_robin
       name: dataSource
-      master-data-source-names: master,sy_db0,sy_db1
+      master-data-source-name: master
       slave-data-source-names: slave
     props:
       sql:
