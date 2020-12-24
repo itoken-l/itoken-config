@@ -37,7 +37,7 @@ spring:
       masterslave:
         load-balance-algorithm-type: round_robin
         name: dataSource
-        master-data-source-name: master,sy_db0,sy_db1
+        master-data-source-names: master,sy_db0,sy_db1
         slave-data-source-names: slave
       props:
         sql:
@@ -54,9 +54,6 @@ spring:
             inline:
               sharding-column=order_id: item_id
               algorithm-expression: t_item$->{item_id % 2}
-          key-generator:
-            column: item_id
-            type: SNOWFLAKE
       binding-tables: t_item
   redis:
     database: 0
