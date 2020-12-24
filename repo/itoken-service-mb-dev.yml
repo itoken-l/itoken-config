@@ -34,14 +34,14 @@ spring:
         url: jdbc:mysql://localhost:3306/sy_db1?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT
         username: root
         password: root@7321
-      masterslave:
-        load-balance-algorithm-type: round_robin
-        name: dataSource
-        master-data-source-names: master,sy_db0,sy_db1
-        slave-data-source-names: slave
-      props:
-        sql:
-          show: true
+    masterslave:
+      load-balance-algorithm-type: round_robin
+      name: dataSource
+      master-data-source-names: master,sy_db0,sy_db1
+      slave-data-source-names: slave
+    props:
+      sql:
+        show: true
     sharding:
       default-database-strategy:
         standard:
