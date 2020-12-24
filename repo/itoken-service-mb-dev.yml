@@ -52,7 +52,7 @@ spring:
           actual-data-nodes: sy_db$->{0..1}.t_item$->{0..1}
           table-strategy:
             inline:
-              sharding-column=order_id: item_id
+              sharding-column: item_id
               algorithm-expression: t_item$->{item_id % 2}
       binding-tables: t_item
   redis:
