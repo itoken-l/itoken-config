@@ -38,13 +38,20 @@ spring:
       sql:
         show: true
     sharding:
+      master-slave-rules:
+        ms0:
+          master-data-source-name: sydb0
+          slave-data-source-names: master
+        ms1:
+          master-data-source-name: sydb1
+          slave-data-source-names: slave
       default-database-strategy:
         standard:
           sharding-column: user_id
           precise-algorithm-class-name: com.cloud.service.mb.sharding.PreciseShardingAlgorithmImpl
       tables:
         t_item:
-          actual-data-nodes: sydb$->{0..1}.t_item$->{0..1}
+          actual-data-nodes: ms$->{0..1}.t_item$->{0..1}
           table-strategy:
             inline:
               sharding-column: item_id
