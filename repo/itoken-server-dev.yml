@@ -7,6 +7,9 @@ spring:
     admin:
       client:
         url: http://localhost:8084
+  data:
+    solr:
+      host: http://127.0.0.1:8983/solr
 
 server:
   port: 8767
